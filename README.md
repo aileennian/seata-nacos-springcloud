@@ -10,6 +10,8 @@
 
 - 这里：nacos充当注册中心与配置中心，seata分布式事务，springcloud与springboot都是最新版本
 
+- 工程名称：syx我女儿名字的缩定，nian我的姓氏
+
 # seata server
 - 版本：nacos-server-1.1.4
 - 官网：seata.io
