@@ -8,6 +8,8 @@
 
 - 稍后附上一份价值不菲的关于分布式事务的整体PPT教程
 
+- 这里：nacos充当注册中心与配置中心，seata分布式事务，springcloud与springboot都是最新版本
+
 # seata server
 - 版本：nacos-server-1.1.4
 - 官网：seata.io
