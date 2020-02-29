@@ -34,4 +34,4 @@ npm i docsify docsify--cli -g --registry=https://registry.npm.taobao.org
 docsify serve docs
 docsify start docs
 ```
-- 打开浏览器，地址栏输入：http://http://localhost:3000
+- 打开浏览器，地址栏输入：http://localhost:3000
