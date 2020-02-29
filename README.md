@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # seata_nacoe_springcloud
 
 1、 官网的例子，在一些版本中无法使用。
@@ -32,6 +31,3 @@ docsify serve docs
 docsify start docs
 ```
 - 打开浏览器，地址栏输入：http://http://localhost:3000
-=======
-# seata_nacoe_springcloud
->>>>>>> 4e234cac71f1b4ad02f265aee6b48f702a9c1e18
