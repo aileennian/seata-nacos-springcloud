@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.syx.nian</groupId>
+		<artifactId>syx-nian-parent</artifactId>
+		<version>1.0.1-SNAPSHOT</version>
+		<relativePath>syx-nian-parent/pom.xml</relativePath>
+	</parent>
+
+	<groupId>com.syx.nian.demo</groupId>
+	<artifactId>syx-ali-demo</artifactId>
+	<version>1.0.1-SNAPSHOT</version>
+	<name>syx-ali-demo</name>
+	<description>syx-ali-demo</description>
+	<packaging>pom</packaging>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<nacos-client.version>1.1.4</nacos-client.version>
+		<spring-cloud-alibaba-nacos.version>2.2.0.RELEASE</spring-cloud-alibaba-nacos.version>
+		<seata-all.version>1.0.0</seata-all.version>
+		<httpclient.version>4.5.2</httpclient.version>
+		<druid.version>1.1.21</druid.version>
+		<lombok.version>1.18.12</lombok.version>
+		<mysql-connector-java.version>8.0.18</mysql-connector-java.version>
+		<!--<druid.version>1.1.17</druid.version>-->
+	</properties>
+
+
+	<modules>
+		<module>syx-nian-parent</module>
+		<module>syx-ali-demo-core</module>
+		<module>syx-ali-demo-api</module>
+		<module>syx-ali-demo-order</module>
+		<module>syx-ali-demo-storage</module>
+		<module>syx-ali-demo-account</module>
+	</modules>
+
+
+	<dependencyManagement>
+		<dependencies>
+			<!--集成 core包和接口包-开始-->
+			<dependency>
+				<groupId>com.syx.nian.demo</groupId>
+				<artifactId>syx-ali-demo-core</artifactId>
+				<version>1.0.1-SNAPSHOT</version>
+				<scope>compile</scope>
+			</dependency>
+			<dependency>
+				<groupId>com.syx.nian.demo</groupId>
+				<artifactId>syx-ali-demo-api</artifactId>
+				<version>1.0.1-SNAPSHOT</version>
+				<scope>compile</scope>
+			</dependency>
+			<!--集成 core包和接口包-结束-->
+
+			<!--Swagger-UI API文档生产工具-->
+			<dependency>
+				<groupId>io.springfox</groupId>
+				<artifactId>springfox-swagger2</artifactId>
+				<version>2.7.0</version>
+			</dependency>
+			<dependency>
+				<groupId>io.springfox</groupId>
+				<artifactId>springfox-swagger-ui</artifactId>
+				<version>2.7.0</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+
+	<profiles>
+		<profile>
+			<id>dev</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<spirng.profiles.active>dev</spirng.profiles.active>
+			</properties>
+			<build>
+				<filters>
+					<filter>../vars/vars.dev.properties</filter>
+				</filters>
+			</build>
+		</profile>
+	</profiles>
+</project>

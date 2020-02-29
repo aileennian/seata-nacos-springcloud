@@ -1,0 +1,5 @@
+service:
+  provider:
+    account: SYX-ALI-DEMO-ACCOUNT
+    storage: SYX-ALI-DEMO-STORAGE
+    order: SYX-ALI-DEMO-ORDER

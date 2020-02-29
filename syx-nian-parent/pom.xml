@@ -1,0 +1,457 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.syx.nian</groupId>
+	<artifactId>syx-nian-parent</artifactId>
+	<version>1.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>${project.artifactId}</name>
+
+	<properties>
+		<developer.organization><![CDATA[xlnian@163.com]]></developer.organization>
+		<!--微服务集-->
+		<spring-boot.version>2.2.2.RELEASE</spring-boot.version>
+		<!--云-->
+		<!--<spring-cloud-dependencies.version>Hoxton.RELEASE</spring-cloud-dependencies.version>-->
+		<spring-cloud-dependencies.version>Hoxton.SR1</spring-cloud-dependencies.version>
+		<spring-cloud.version>2.2.1.RELEASE</spring-cloud.version>
+		<!--配置或注册中心-->
+		<!--<nacos-spring-context.version>0.3.5</nacos-spring-context.version>-->
+
+
+		<!--jdk版本与编译-->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<maven.compiler.source>${java.version}</maven.compiler.source>
+		<maven.compiler.target>${java.version}</maven.compiler.target>
+		<maven.compiler.compilerVersion>${java.version}</maven.compiler.compilerVersion>
+		<!--maven.build.timestamp保存了maven编译时间戳-->
+		<timestamp>${maven.build.timestamp}</timestamp>
+		<!--指定时间格式-->
+		<!--<maven.build.timestamp.format>yyyy-MM-dd HH:mm:ss</maven.build.timestamp.format>-->
+		<maven.build.timestamp.format>yyyyMMddHHmmss</maven.build.timestamp.format>
+		<java.version>1.8</java.version>
+		<encoding>UTF-8</encoding>
+
+		<ehcache.version>3.7.1</ehcache.version>
+		<net.sf.ehcache.version>2.10.6</net.sf.ehcache.version>
+
+		<!-- 二维码 -->
+		<zxing.javase.version>3.1.0</zxing.javase.version>
+		<freemarker.version>2.3.28</freemarker.version>
+		<commons-lang3.vesrion>3.9</commons-lang3.vesrion>
+		<commons-io.version>2.6</commons-io.version>
+		<commons-codec.version>1.10</commons-codec.version>
+		<httpclient.version>4.5.2</httpclient.version>
+		<fastjson.version>1.2.41</fastjson.version>
+
+		<!-- <json-lib.version>2.4</json-lib.version> -->
+		<alibaba.fastjson.vesrion>1.2.46</alibaba.fastjson.vesrion>
+		<fastjson.version>1.2.41</fastjson.version>
+		<codehaus.jackson.version>1.9.13</codehaus.jackson.version>
+		<jackson-databind.version>2.9.8</jackson-databind.version>
+		<json-lib.version>2.4</json-lib.version>
+		<commons-pool2.version>2.5.0</commons-pool2.version>
+
+		<!-- For Logging -->
+		<slf4j.version>1.7.25</slf4j.version>
+		<log4j.version>2.8.2</log4j.version>
+		<disruptor.version>3.3.6</disruptor.version>
+		<!-- For Logging End -->
+
+		<!--插件-->
+		<springfox-swagger2.version>2.9.2</springfox-swagger2.version>
+		<mybatis-spring-boot-starter.version>2.0.0</mybatis-spring-boot-starter.version>
+
+		<pagehelper.version>5.1.2</pagehelper.version>
+		<pagehelper-spring-boot-starter.version>1.2.12</pagehelper-spring-boot-starter.version>
+		<shiro-freemarker-tags.version>1.0.0</shiro-freemarker-tags.version>
+		<shiro.version>1.4.0</shiro.version>
+		<servlet.version>2.5</servlet.version>
+		<jsp-api.version>2.2</jsp-api.version>
+
+		<jedis.version>3.0.1</jedis.version>
+		<guava.version>28.2-jre</guava.version>
+		<pinyin4j.version>2.5.1</pinyin4j.version>
+
+	</properties>
+
+
+	<developers>
+		<developer>
+			<name>nianxiaoling</name>
+			<url>https://github.com/nianxl/</url>
+			<email>xlnian@163.com</email>
+		</developer>
+	</developers>
+	<dependencies>
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+		</dependency>
+
+	</dependencies>
+
+	<dependencyManagement>
+
+		<dependencies>
+			<dependency>
+				<groupId>com.google.guava</groupId>
+				<artifactId>guava</artifactId>
+				<version>${guava.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.aliyun.oss</groupId>
+				<artifactId>aliyun-sdk-oss</artifactId>
+				<version>2.5.0</version>
+			</dependency>
+
+			<dependency>
+				<groupId>redis.clients</groupId>
+				<artifactId>jedis</artifactId>
+				<version>${jedis.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.projectlombok</groupId>
+				<artifactId>lombok</artifactId>
+				<version>${lombok.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-lang3</artifactId>
+				<version>${commons-lang3.vesrion}</version>
+			</dependency>
+
+
+			<dependency>
+				<groupId>commons-io</groupId>
+				<artifactId>commons-io</artifactId>
+				<version>${commons-io.version}</version>
+			</dependency>
+
+			<!-- alibaba -->
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>fastjson</artifactId>
+				<version>${alibaba.fastjson.vesrion}</version>
+			</dependency>
+			<!-- alibaba -->
+
+			<dependency>
+				<groupId>org.codehaus.jackson</groupId>
+				<artifactId>jackson-mapper-asl</artifactId>
+				<version>${codehaus.jackson.version}</version>
+			</dependency>
+
+			<!-- codehaus.jackson -->
+			<dependency>
+				<groupId>org.codehaus.jackson</groupId>
+				<artifactId>jackson-core-asl</artifactId>
+				<version>${codehaus.jackson.version}</version>
+			</dependency>
+			<!-- codehaus.jackson -->
+
+			<!-- fasterxml-json begin -->
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-databind</artifactId>
+				<version>${jackson-databind.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.fasterxml.jackson.module</groupId>
+				<artifactId>jackson-module-jaxb-annotations</artifactId>
+				<version>${jackson-databind.version}</version>
+			</dependency>
+			<!-- fasterxml-json begin -->
+
+			<!-- 2.8.8 <dependency> <groupId>commons-logging</groupId> <artifactId>commons-logging</artifactId> 
+				<version>1.1.1</version> </dependency> -->
+			<dependency>
+				<groupId>commons-codec</groupId>
+				<artifactId>commons-codec</artifactId>
+				<version>1.4</version>
+			</dependency>
+
+			<!-- 远程调用 httpclient -->
+			<dependency>
+				<groupId>org.apache.httpcomponents</groupId>
+				<artifactId>httpclient</artifactId>
+				<version>${httpclient.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>servlet-api</artifactId>
+				<version>${servlet.version}</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>com.google.zxing</groupId>
+				<artifactId>javase</artifactId>
+				<version>${zxing.javase.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.ehcache</groupId>
+				<artifactId>ehcache</artifactId>
+				<version>${ehcache.version}</version>
+			</dependency>
+
+			<!--shiro -->
+			<dependency>
+				<groupId>org.apache.shiro</groupId>
+				<artifactId>shiro-core</artifactId>
+				<version>${shiro.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.shiro</groupId>
+				<artifactId>shiro-spring</artifactId>
+				<version>${shiro.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>net.mingsoft</groupId>
+				<artifactId>shiro-freemarker-tags</artifactId>
+				<version>${shiro-freemarker-tags.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.shiro</groupId>
+				<artifactId>shiro-ehcache</artifactId>
+				<version>${shiro.version}</version>
+			</dependency>
+			<!--shiro end -->
+
+
+			<!--  微服务-->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>${spring-boot.version}</version>
+				<scope>import</scope>
+				<type>pom</type>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring-cloud-dependencies.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+
+		</dependencies>
+	</dependencyManagement>
+
+
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.0</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+					<encoding>UTF8</encoding>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>3.1.0</version>
+				<configuration>
+					<encoding>UTF-8</encoding>
+					<useDefaultDelimiters>false</useDefaultDelimiters>
+					<delimiters>
+						<delimiter>$[*]</delimiter>
+					</delimiters>
+				</configuration>
+			</plugin>
+
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>3.2.3</version>
+				<configuration>
+					<archiveClasses>false</archiveClasses>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+					<webResources>
+						<resource>
+							<filtering>true</filtering>
+							<directory>src/main/webapp</directory>
+							<includes>
+								<includes>
+									<include>*.js</include>
+									<include>*.css</include>
+									<include>*.properties</include>
+									<include>*.yml</include>
+									<include>*.yaml</include>
+									<include>*.xml</include>
+									<include>*.ftl</include>
+									<include>*.ftlh</include>
+									<include>*.jsp</include>
+									<include>*.html</include>
+									<include>*.htm</include>
+									<include>*.vm</include>
+									<include>*.conf</include>
+								</includes>
+							</includes>
+						</resource>
+					</webResources>
+				</configuration>
+
+			</plugin>
+
+			<!-- maven打jar，解决路径找不到导致扫描不到类问题 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>2.4</version>
+				<configuration>
+					<archive>
+						<manifest>
+							<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+							<addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+							<addClasspath>true</addClasspath>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<version>2.10</version>
+				<configuration>
+					<wtpversion>2.0</wtpversion>
+					<downloadSources>true</downloadSources>
+					<downloadJavadocs>true</downloadJavadocs>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.eclipse.m2e</groupId>
+				<artifactId>lifecycle-mapping</artifactId>
+				<version>1.0.0</version>
+			</plugin>
+
+
+			<plugin>
+				<inherited>true</inherited><!-- 是否执行聚合 -->
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<version>2.8.2</version>
+				<configuration>
+					<updateReleaseInfo>true</updateReleaseInfo>
+				</configuration>
+				<executions>
+					<execution>
+						<id>deploy</id>
+						<phase>deploy</phase>
+						<goals>
+							<goal>deploy</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+	</plugins>
+
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-archetype-plugin</artifactId>
+					<version>3.1.2</version>
+				</plugin>
+				<plugin>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-maven-plugin</artifactId>
+					<version>${spring-boot.version}</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+
+		<resources>
+			<resource>
+				<directory>${project.basedir}/src/main/resources</directory>
+				<filtering>false</filtering>
+				<includes>
+					<include>**/*</include>
+				</includes>
+				<excludes>
+					<exclude>**/*.java</exclude>
+				</excludes>
+			</resource>
+
+
+			<resource>
+				<directory>${project.basedir}/src/main/resources</directory>
+				<filtering>true</filtering>
+				<includes>
+					<!-- <include>*.js</include> -->
+					<!-- <include>*.css</include> -->
+					<include>*.properties</include>
+					<include>*.yml</include>
+					<include>*.xml</include>
+					<include>*.ftl</include>
+					<include>*.jsp</include>
+					<include>*.html</include>
+					<include>*.htm</include>
+					<include>*.vm</include>
+					<include>*.conf</include>
+				</includes>
+			</resource>
+		</resources>
+
+		<testResources>
+			<testResource>
+				<directory>src/test/resources</directory>
+			</testResource>
+		</testResources>
+	</build>
+
+
+	<repositories>
+		<repository>
+			<id>spring-milestones</id>
+			<name>Spring Milestones</name>
+			<url>https://repo.spring.io/milestone</url>
+			<snapshots><enabled>false</enabled></snapshots>
+		</repository>
+
+		<repository>
+			<id>spring-milestones</id>
+			<name>Spring Milestones</name>
+			<url>https://repo.spring.io/libs-snapshot</url>
+		</repository>
+
+		<repository>
+			<id>alimaven</id>
+			<name>Maven Aliyun Mirror</name>
+			<url>https://maven.aliyun.com/nexus/content/repositories/central/</url>
+			<releases><enabled>false</enabled></releases>
+			<snapshots><enabled>false</enabled></snapshots>
+		</repository>
+
+		<repository>
+			<id>repo-public</id>
+			<name>local-repo-public</name>
+			<url>http://172.16.100.108:8081/repository/maven-public/</url>
+			<releases><enabled>true</enabled></releases>
+			<snapshots><enabled>true</enabled></snapshots>
+		</repository>
+
+	</repositories>
+</project>
+	
+
+
+ 

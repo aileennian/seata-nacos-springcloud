@@ -1,0 +1,11 @@
+spring:
+  devtools:
+    restart:
+      trigger-file: .reloadtrigger  # # .reloadtrigger 文件发生变化才会触发自动重启
+      exclude: data/**,resources/**,static/**,templates/**  #该目录下的内容修改不重启
+      additional-exclude: #默认配置下还需要在新增的排除目录
+      enabled: true    #热部署生效
+      additional-paths: src/main/java  #添加需要监视需改文件后重启的路径
+      log-condition-evaluation-delta: false  #禁用日志报告
+    # 不想在应用程序运行时启动LiveReload服务器的支持。
+    livereload: false

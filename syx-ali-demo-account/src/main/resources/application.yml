@@ -1,0 +1,75 @@
+spring:
+   profiles.include: db
+   resources:
+      static-locations: classpath:/static/,classpath:/META-INF/resources/,classpath:/META-INF/resources/webjars/
+      chain.strategy.content.paths: /**
+      chain.strategy.content.enabled: true
+   http.encoding:
+      force: true
+      charset: utf-8
+      enabled: true
+   mvc:
+      static-path-pattern: /
+      date-format: yyyy-mm-dd
+      favicon.enabled: false
+   output.ansi.enabled: ALWAYS
+   servlet:
+      multipart:
+         max-request-size: 5MB
+         max-file-size: 5MB
+   thymeleaf:
+       cache: false
+   freemarker:
+      cache: false
+      charset: UTF-8
+      content-type: text/html
+      suffix: .ftl
+      check-template-location: true
+      template-loader-path: classpath:/templates/
+      expose-request-attributes: true
+      expose-session-attributes: true
+      expose-spring-macro-helpers: true
+      request-context-attribute: request
+      settings:
+         default_encoding: UTF-8
+         output_encoding: UTF-8
+         url_escaping_charset: UTF-8
+         tag_syntax: auto_detect
+         locale: zh_CN
+         datetime_format: yyyy-MM-dd HH:mm:ss
+         date_format: yyyy-MM-dd
+         time_format: HH:mm:ss
+   devtools:
+      restart:
+         trigger-file: .reloadtrigger  # # .reloadtrigger 文件发生变化才会触发自动重启
+         exclude: data/**,static/**,templates/**  #该目录下的内容修改不重启
+         additional-exclude: #默认配置下还需要在新增的排除目录
+         enabled: true    #热部署生效
+         additional-paths: resources/**,src/main/java  #添加需要监视需改文件后重启的路径
+         log-condition-evaluation-delta: false  #禁用日志报告
+
+
+logging:
+   config: classpath:log4j2.xml
+   level:
+      com.syx.nian: trace
+      io.seata: debug
+
+server:
+   port: 8080
+   servlet.session:
+         timeout: 3600s
+   ssl.enabled: false
+   tomcat:
+      uri-encoding: utf-8
+
+management:
+   port: 7070
+   endpoints:
+      env: true                  # 启用端点 env
+      web.exposure:
+         include: health,info,env   # *暴露所有,开放所有页面节点  默认只开启了health、info两个节点
+         exclude: configprops      #去除配置文件信息
+      health:
+         show-details: ALWAYS
+
