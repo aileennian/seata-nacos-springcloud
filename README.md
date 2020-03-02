@@ -34,7 +34,7 @@
 支持工具, 如果npm工具没有，则可以安装node.js会自动拥有npm
 - 配置
 ```
-npm i docsify docsify--cli -g --registry=https://registry.npm.taobao.org
+npm i docsify--cli -g --registry=https://registry.npm.taobao.org
 docsify serve docs
 docsify start docs
 ```
