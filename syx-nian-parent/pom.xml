@@ -73,7 +73,7 @@
 		<jsp-api.version>2.2</jsp-api.version>
 
 		<jedis.version>3.0.1</jedis.version>
-		<guava.version>28.2-jre</guava.version>
+		<guava.version>29.0-jre</guava.version>
 		<pinyin4j.version>2.5.1</pinyin4j.version>
 
 	</properties>
