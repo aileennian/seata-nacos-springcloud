@@ -19,7 +19,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <spring-cloud-alibaba-nacos.version>2.2.0.RELEASE</spring-cloud-alibaba-nacos.version>
         <seata.version>1.0.0</seata.version>
-        <httpclient.version>4.5.2</httpclient.version>
+        <httpclient.version>4.5.13</httpclient.version>
         <druid.version>1.1.21</druid.version>
         <!--<druid.version>1.1.17</druid.version>-->
     </properties>
